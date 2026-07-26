@@ -4,6 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.urbii.pacelab.data.local.dao.SyncDao
+import com.urbii.pacelab.data.local.dao.TimeSeriesDao
 import com.urbii.pacelab.data.local.dao.WorkoutDao
 import com.urbii.pacelab.data.local.entity.CadenceSampleEntity
 import com.urbii.pacelab.data.local.entity.DistanceSegmentEntity
@@ -29,11 +30,12 @@ import com.urbii.pacelab.data.local.entity.WorkoutEntity
         WorkoutAnnotationEntity::class,
         SyncStateEntity::class,
     ],
-    version = 1,
+    version = 2,
     exportSchema = true,
 )
 @TypeConverters(Converters::class)
 abstract class PaceLabDatabase : RoomDatabase() {
     abstract fun workoutDao(): WorkoutDao
     abstract fun syncDao(): SyncDao
+    abstract fun timeSeriesDao(): TimeSeriesDao
 }

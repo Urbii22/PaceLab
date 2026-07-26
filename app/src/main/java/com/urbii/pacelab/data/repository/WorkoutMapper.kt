@@ -2,11 +2,25 @@ package com.urbii.pacelab.data.repository
 
 import com.urbii.pacelab.data.local.entity.WorkoutEntity
 import com.urbii.pacelab.domain.model.ExerciseType
+import com.urbii.pacelab.domain.model.RoutePoint
+import com.urbii.pacelab.domain.model.TimeSeriesSample
 import com.urbii.pacelab.domain.model.Workout
 import java.time.Instant
 import java.time.ZoneOffset
 
-fun WorkoutEntity.toDomain(): Workout = Workout(
+fun WorkoutEntity.toDomain(
+    heartRateSamples: List<TimeSeriesSample> = emptyList(),
+    speedSamples: List<TimeSeriesSample> = emptyList(),
+    cadenceSamples: List<TimeSeriesSample> = emptyList(),
+    elevationSamples: List<TimeSeriesSample> = emptyList(),
+    distanceSamples: List<TimeSeriesSample> = emptyList(),
+    vo2MaxSamples: List<TimeSeriesSample> = emptyList(),
+    routePoints: List<RoutePoint> = emptyList(),
+    notes: String = "",
+    perceivedEffort: Int? = null,
+    feeling: String? = null,
+    isFavorite: Boolean = false,
+): Workout = Workout(
     id = id,
     exerciseType = normalizedExerciseType.toExerciseType(),
     startTime = startTimeUtc,
@@ -20,6 +34,17 @@ fun WorkoutEntity.toDomain(): Workout = Workout(
     maximumSpeedMetersPerSecond = maximumSpeedMetersPerSecond,
     totalCaloriesKcal = totalCaloriesKcal,
     vo2Max = vo2MaxMlKgMin,
+    heartRateSamples = heartRateSamples,
+    speedSamples = speedSamples,
+    cadenceSamples = cadenceSamples,
+    elevationSamples = elevationSamples,
+    distanceSamples = distanceSamples,
+    vo2MaxSamples = vo2MaxSamples,
+    routePoints = routePoints,
+    notes = notes,
+    perceivedEffort = perceivedEffort,
+    feeling = feeling,
+    isFavorite = isFavorite,
     sourceProvider = sourceProvider,
     sourceDataOrigin = sourceDataOrigin,
     sourceRecordId = sourceRecordId,

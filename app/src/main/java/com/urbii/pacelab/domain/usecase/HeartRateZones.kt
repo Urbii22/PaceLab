@@ -14,15 +14,22 @@ fun defaultHeartRateZones(maxHeartRateBpm: Int): List<HeartRateZone> {
 
 fun heartRateZone(bpm: Int, zones: List<HeartRateZone>): HeartRateZone? = zones.firstOrNull { it.contains(bpm) }
 
-/** Returns seconds spent in each zone. Samples are assumed ordered by timestamp. */
-fun timeInHeartRateZones(samples: List<TimeSeriesSample>, zones: List<HeartRateZone>): Map<HeartRateZone, Double> {
+/**
+ * Returns seconds spent in each zone. Intervals are assigned to the zone of their first sample
+ * (the source does not provide the exact transition time). Long gaps are excluded so pauses or
+ * missing data are not silently counted as training time.
+ */
+fun timeInHeartRateZones(
+    samples: List<TimeSeriesSample>,
+    zones: List<HeartRateZone>,
+    maxGapSeconds: Double = 30.0,
+): Map<HeartRateZone, Double> {
     if (samples.isEmpty() || zones.isEmpty()) return emptyMap()
     val totals = zones.associateWith { 0.0 }.toMutableMap()
     samples.zipWithNext().forEach { (a, b) ->
         val seconds = (b.timestamp - a.timestamp).coerceAtLeast(0).toDouble()
         val startZone = heartRateZone(a.value.toInt(), zones)
-        val endZone = heartRateZone(b.value.toInt(), zones)
-        if (startZone != null && startZone == endZone) totals[startZone] = totals.getValue(startZone) + seconds
+        if (seconds <= maxGapSeconds && startZone != null) totals[startZone] = totals.getValue(startZone) + seconds
     }
     return totals
 }

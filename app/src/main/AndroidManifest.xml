@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <queries>
+        <package android:name="com.google.android.apps.healthdata" />
+    </queries>
     <uses-permission android:name="android.permission.health.READ_EXERCISE" />
     <uses-permission android:name="android.permission.health.READ_HEART_RATE" />
     <uses-permission android:name="android.permission.health.READ_DISTANCE" />
@@ -6,11 +9,14 @@
     <uses-permission android:name="android.permission.health.READ_TOTAL_CALORIES_BURNED" />
     <uses-permission android:name="android.permission.health.READ_VO2_MAX" />
     <uses-permission android:name="android.permission.health.READ_ELEVATION_GAINED" />
-    <uses-permission android:name="android.permission.health.READ_CADENCE" />
-    <uses-permission android:name="android.permission.health.READ_EXERCISE_ROUTE" />
+    <uses-permission android:name="android.permission.health.READ_STEPS_CADENCE" />
+    <uses-permission android:name="android.permission.health.READ_CYCLING_PEDALING_CADENCE" />
+    <uses-permission android:name="android.permission.health.READ_EXERCISE_ROUTES" />
+    <uses-permission android:name="android.permission.health.READ_HEALTH_DATA_HISTORY" />
 
     <application
         android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
         android:label="PaceLab"
         android:supportsRtl="true"
         android:theme="@style/Theme.PaceLab">

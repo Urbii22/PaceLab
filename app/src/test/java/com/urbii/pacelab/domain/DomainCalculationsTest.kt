@@ -19,7 +19,9 @@ class DomainCalculationsTest {
         assertEquals(5, zones.size)
         assertEquals(2, heartRateZone(130, zones)?.number)
         val times = timeInHeartRateZones(listOf(TimeSeriesSample(0, 130.0), TimeSeriesSample(10, 130.0), TimeSeriesSample(20, 180.0)), zones)
-        assertEquals(10.0, times[zones[1]]!!, 0.001)
+        assertEquals(20.0, times[zones[1]]!!, 0.001)
+        val withGap = timeInHeartRateZones(listOf(TimeSeriesSample(0, 130.0), TimeSeriesSample(60, 130.0)), zones)
+        assertEquals(0.0, withGap[zones[1]]!!, 0.001)
     }
 
     @Test fun splitsUseCumulativeDistance() {

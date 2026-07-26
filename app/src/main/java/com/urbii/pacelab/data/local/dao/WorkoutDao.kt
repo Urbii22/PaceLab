@@ -32,6 +32,12 @@ interface WorkoutDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertAll(workouts: List<WorkoutEntity>)
 
+    @Query("SELECT id FROM workouts WHERE sourceProvider = 'Sample'")
+    suspend fun syntheticWorkoutIds(): List<String>
+
+    @Query("DELETE FROM workouts WHERE sourceProvider = 'Sample'")
+    suspend fun deleteSyntheticWorkouts()
+
     @Query("UPDATE workouts SET isDeleted = 1, lastSyncedAt = :syncedAt WHERE sourceRecordId = :sourceRecordId")
     suspend fun markDeleted(sourceRecordId: String, syncedAt: java.time.Instant)
 

@@ -4,16 +4,16 @@ PaceLab es una aplicación Android privada para analizar entrenamientos ya final
 
 ## Estado actual
 
-Milestone 1: fundación ejecutable.
+Milestone 2 en curso: fundación e importador Health Connect.
 
 - Proyecto Kotlin + Jetpack Compose + Material 3.
 - Room con entidades para sesiones, series temporales, anotaciones y estado de sincronización.
-- Health Connect aislado en `data/healthconnect` con lectura de sesiones y pantalla de diagnóstico/permisos.
-- Historial, resumen semanal, progreso, detalle y ajustes con datos sintéticos locales para validar el flujo sin un teléfono conectado.
+- Health Connect aislado en `data/healthconnect` con lectura paginada de sesiones, FC, velocidad, distancia, calorías, VO₂max, elevación, cadencia y ruta disponible.
+- Historial, resumen semanal, progreso, detalle y ajustes conectados a Room. Una instalación release limpia empieza vacía; los fixtures solo viven en tests.
 - Motor Android-free para ritmo, velocidad, zonas de frecuencia cardiaca, parciales, agregación semanal y deduplicación SHA-256.
 - Tests unitarios del motor de cálculo.
 
-La importación real de series de Health Connect y la validación con entrenamientos Samsung reales son el siguiente paso del plan; deben hacerse en el teléfono antes de fijar las gráficas definitivas.
+La importación conserva estados explícitos de proveedor, permisos, lecturas vacías y errores. La validación con entrenamientos Samsung reales sigue siendo obligatoria antes de afirmar compatibilidad definitiva; este entorno no tiene un teléfono conectado.
 
 ## Compilar
 
@@ -40,7 +40,7 @@ La variante debug usa `applicationIdSuffix = ".debug"` para no reemplazar una fu
 1. Instala Health Connect y sincroniza Samsung Health.
 2. Abre PaceLab → Ajustes → Abrir diagnósticos.
 3. Concede únicamente los permisos de lectura solicitados.
-4. Exporta/contrasta los registros reales antes de implementar el motor definitivo de gráficas.
+4. Usa «Leer diagnóstico real» para inspeccionar sesiones y series disponibles.
 
 PaceLab no escribe datos en Health Connect, no tiene backend, no incluye analítica remota y no solicita Internet.
 
