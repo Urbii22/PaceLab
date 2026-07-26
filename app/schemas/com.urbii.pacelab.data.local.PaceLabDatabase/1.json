@@ -1,0 +1,868 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "7446b5100c1ce32629b9acf22d4ccab4",
+    "entities": [
+      {
+        "tableName": "workouts",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `sourceProvider` TEXT NOT NULL, `sourceRecordId` TEXT NOT NULL, `sourceDataOrigin` TEXT, `sourceDeviceId` TEXT, `sourceDeviceName` TEXT, `sourceExerciseType` TEXT NOT NULL, `normalizedExerciseType` TEXT NOT NULL, `sourceTitle` TEXT, `startTimeUtc` TEXT NOT NULL, `endTimeUtc` TEXT NOT NULL, `zoneOffsetStart` TEXT, `zoneOffsetEnd` TEXT, `elapsedDurationSeconds` INTEGER NOT NULL, `activeDurationSeconds` INTEGER, `distanceMeters` REAL, `totalCaloriesKcal` REAL, `averageHeartRateBpm` REAL, `maximumHeartRateBpm` REAL, `averageSpeedMetersPerSecond` REAL, `maximumSpeedMetersPerSecond` REAL, `averagePaceSecondsPerKm` REAL, `vo2MaxMlKgMin` REAL, `elevationGainMeters` REAL, `averageCadenceStepsPerMinute` REAL, `hasRoute` INTEGER NOT NULL, `fingerprint` TEXT NOT NULL, `sourceCreatedAt` TEXT, `sourceUpdatedAt` TEXT, `importedAt` TEXT NOT NULL, `lastSyncedAt` TEXT NOT NULL, `isDeleted` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceProvider",
+            "columnName": "sourceProvider",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceRecordId",
+            "columnName": "sourceRecordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceDataOrigin",
+            "columnName": "sourceDataOrigin",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sourceDeviceId",
+            "columnName": "sourceDeviceId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sourceDeviceName",
+            "columnName": "sourceDeviceName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sourceExerciseType",
+            "columnName": "sourceExerciseType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalizedExerciseType",
+            "columnName": "normalizedExerciseType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceTitle",
+            "columnName": "sourceTitle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "startTimeUtc",
+            "columnName": "startTimeUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endTimeUtc",
+            "columnName": "endTimeUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zoneOffsetStart",
+            "columnName": "zoneOffsetStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "zoneOffsetEnd",
+            "columnName": "zoneOffsetEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "elapsedDurationSeconds",
+            "columnName": "elapsedDurationSeconds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeDurationSeconds",
+            "columnName": "activeDurationSeconds",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "distanceMeters",
+            "columnName": "distanceMeters",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "totalCaloriesKcal",
+            "columnName": "totalCaloriesKcal",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "averageHeartRateBpm",
+            "columnName": "averageHeartRateBpm",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "maximumHeartRateBpm",
+            "columnName": "maximumHeartRateBpm",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "averageSpeedMetersPerSecond",
+            "columnName": "averageSpeedMetersPerSecond",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "maximumSpeedMetersPerSecond",
+            "columnName": "maximumSpeedMetersPerSecond",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "averagePaceSecondsPerKm",
+            "columnName": "averagePaceSecondsPerKm",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vo2MaxMlKgMin",
+            "columnName": "vo2MaxMlKgMin",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "elevationGainMeters",
+            "columnName": "elevationGainMeters",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "averageCadenceStepsPerMinute",
+            "columnName": "averageCadenceStepsPerMinute",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hasRoute",
+            "columnName": "hasRoute",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fingerprint",
+            "columnName": "fingerprint",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceCreatedAt",
+            "columnName": "sourceCreatedAt",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sourceUpdatedAt",
+            "columnName": "sourceUpdatedAt",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "importedAt",
+            "columnName": "importedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastSyncedAt",
+            "columnName": "lastSyncedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDeleted",
+            "columnName": "isDeleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_workouts_sourceRecordId",
+            "unique": true,
+            "columnNames": [
+              "sourceRecordId"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_workouts_sourceRecordId` ON `${TABLE_NAME}` (`sourceRecordId`)"
+          },
+          {
+            "name": "index_workouts_fingerprint",
+            "unique": true,
+            "columnNames": [
+              "fingerprint"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_workouts_fingerprint` ON `${TABLE_NAME}` (`fingerprint`)"
+          },
+          {
+            "name": "index_workouts_startTimeUtc",
+            "unique": false,
+            "columnNames": [
+              "startTimeUtc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_workouts_startTimeUtc` ON `${TABLE_NAME}` (`startTimeUtc`)"
+          },
+          {
+            "name": "index_workouts_normalizedExerciseType",
+            "unique": false,
+            "columnNames": [
+              "normalizedExerciseType"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_workouts_normalizedExerciseType` ON `${TABLE_NAME}` (`normalizedExerciseType`)"
+          },
+          {
+            "name": "index_workouts_sourceDataOrigin",
+            "unique": false,
+            "columnNames": [
+              "sourceDataOrigin"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_workouts_sourceDataOrigin` ON `${TABLE_NAME}` (`sourceDataOrigin`)"
+          },
+          {
+            "name": "index_workouts_isDeleted",
+            "unique": false,
+            "columnNames": [
+              "isDeleted"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_workouts_isDeleted` ON `${TABLE_NAME}` (`isDeleted`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "heart_rate_samples",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workoutId` TEXT NOT NULL, `timestampUtc` TEXT NOT NULL, `elapsedSeconds` REAL NOT NULL, `distanceMetersFromStart` REAL, `value` REAL NOT NULL, `sampleIndex` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampUtc",
+            "columnName": "timestampUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedSeconds",
+            "columnName": "elapsedSeconds",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distanceMetersFromStart",
+            "columnName": "distanceMetersFromStart",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sampleIndex",
+            "columnName": "sampleIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_heart_rate_samples_workoutId_timestampUtc",
+            "unique": false,
+            "columnNames": [
+              "workoutId",
+              "timestampUtc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_heart_rate_samples_workoutId_timestampUtc` ON `${TABLE_NAME}` (`workoutId`, `timestampUtc`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "speed_samples",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workoutId` TEXT NOT NULL, `timestampUtc` TEXT NOT NULL, `elapsedSeconds` REAL NOT NULL, `distanceMetersFromStart` REAL, `value` REAL NOT NULL, `sampleIndex` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampUtc",
+            "columnName": "timestampUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedSeconds",
+            "columnName": "elapsedSeconds",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distanceMetersFromStart",
+            "columnName": "distanceMetersFromStart",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sampleIndex",
+            "columnName": "sampleIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_speed_samples_workoutId_timestampUtc",
+            "unique": false,
+            "columnNames": [
+              "workoutId",
+              "timestampUtc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_speed_samples_workoutId_timestampUtc` ON `${TABLE_NAME}` (`workoutId`, `timestampUtc`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "cadence_samples",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workoutId` TEXT NOT NULL, `timestampUtc` TEXT NOT NULL, `elapsedSeconds` REAL NOT NULL, `distanceMetersFromStart` REAL, `value` REAL NOT NULL, `sampleIndex` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampUtc",
+            "columnName": "timestampUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedSeconds",
+            "columnName": "elapsedSeconds",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distanceMetersFromStart",
+            "columnName": "distanceMetersFromStart",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sampleIndex",
+            "columnName": "sampleIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_cadence_samples_workoutId_timestampUtc",
+            "unique": false,
+            "columnNames": [
+              "workoutId",
+              "timestampUtc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_cadence_samples_workoutId_timestampUtc` ON `${TABLE_NAME}` (`workoutId`, `timestampUtc`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "elevation_samples",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workoutId` TEXT NOT NULL, `timestampUtc` TEXT NOT NULL, `elapsedSeconds` REAL NOT NULL, `distanceMetersFromStart` REAL, `value` REAL NOT NULL, `sampleIndex` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampUtc",
+            "columnName": "timestampUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedSeconds",
+            "columnName": "elapsedSeconds",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distanceMetersFromStart",
+            "columnName": "distanceMetersFromStart",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sampleIndex",
+            "columnName": "sampleIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_elevation_samples_workoutId_timestampUtc",
+            "unique": false,
+            "columnNames": [
+              "workoutId",
+              "timestampUtc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_elevation_samples_workoutId_timestampUtc` ON `${TABLE_NAME}` (`workoutId`, `timestampUtc`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "distance_segments",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workoutId` TEXT NOT NULL, `timestampUtc` TEXT NOT NULL, `elapsedSeconds` REAL NOT NULL, `distanceMetersFromStart` REAL NOT NULL, `value` REAL NOT NULL, `sampleIndex` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampUtc",
+            "columnName": "timestampUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedSeconds",
+            "columnName": "elapsedSeconds",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distanceMetersFromStart",
+            "columnName": "distanceMetersFromStart",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sampleIndex",
+            "columnName": "sampleIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_distance_segments_workoutId_timestampUtc",
+            "unique": false,
+            "columnNames": [
+              "workoutId",
+              "timestampUtc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_distance_segments_workoutId_timestampUtc` ON `${TABLE_NAME}` (`workoutId`, `timestampUtc`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "vo2max_samples",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workoutId` TEXT NOT NULL, `timestampUtc` TEXT NOT NULL, `elapsedSeconds` REAL NOT NULL, `distanceMetersFromStart` REAL, `value` REAL NOT NULL, `sampleIndex` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampUtc",
+            "columnName": "timestampUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedSeconds",
+            "columnName": "elapsedSeconds",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distanceMetersFromStart",
+            "columnName": "distanceMetersFromStart",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sampleIndex",
+            "columnName": "sampleIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_vo2max_samples_workoutId_timestampUtc",
+            "unique": false,
+            "columnNames": [
+              "workoutId",
+              "timestampUtc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vo2max_samples_workoutId_timestampUtc` ON `${TABLE_NAME}` (`workoutId`, `timestampUtc`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "route_points",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `workoutId` TEXT NOT NULL, `timestampUtc` TEXT NOT NULL, `elapsedSeconds` REAL NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `altitudeMeters` REAL, `horizontalAccuracyMeters` REAL, `bearingDegrees` REAL, `sampleIndex` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampUtc",
+            "columnName": "timestampUtc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedSeconds",
+            "columnName": "elapsedSeconds",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "altitudeMeters",
+            "columnName": "altitudeMeters",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "horizontalAccuracyMeters",
+            "columnName": "horizontalAccuracyMeters",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bearingDegrees",
+            "columnName": "bearingDegrees",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sampleIndex",
+            "columnName": "sampleIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_route_points_workoutId_timestampUtc",
+            "unique": false,
+            "columnNames": [
+              "workoutId",
+              "timestampUtc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_route_points_workoutId_timestampUtc` ON `${TABLE_NAME}` (`workoutId`, `timestampUtc`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "workout_annotations",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`workoutId` TEXT NOT NULL, `notes` TEXT NOT NULL, `perceivedEffort` INTEGER, `feeling` TEXT, `isFavorite` INTEGER NOT NULL, `updatedAt` TEXT NOT NULL, PRIMARY KEY(`workoutId`))",
+        "fields": [
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "perceivedEffort",
+            "columnName": "perceivedEffort",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "feeling",
+            "columnName": "feeling",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "workoutId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "sync_state",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`recordType` TEXT NOT NULL, `changeToken` TEXT, `lastSuccessfulSyncAt` TEXT, `lastAttemptAt` TEXT, `lastErrorCode` TEXT, `lastErrorMessage` TEXT, `initialImportCompleted` INTEGER NOT NULL, PRIMARY KEY(`recordType`))",
+        "fields": [
+          {
+            "fieldPath": "recordType",
+            "columnName": "recordType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "changeToken",
+            "columnName": "changeToken",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastSuccessfulSyncAt",
+            "columnName": "lastSuccessfulSyncAt",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastAttemptAt",
+            "columnName": "lastAttemptAt",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastErrorCode",
+            "columnName": "lastErrorCode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastErrorMessage",
+            "columnName": "lastErrorMessage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "initialImportCompleted",
+            "columnName": "initialImportCompleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "recordType"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7446b5100c1ce32629b9acf22d4ccab4')"
+    ]
+  }
+}
